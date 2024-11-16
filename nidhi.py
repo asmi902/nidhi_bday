@@ -271,16 +271,15 @@ elif game_choice == "How Well Do You Know Me?":
 elif game_choice == "Two Truths and a Lie":
     st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
     statements = [
-        ("I once met a celebrity at a party", "I have a secret tattoo", "I’ve been skydiving twice"),
-        ("I got lost in a foreign country", "I can’t swim", "I am fluent in four languages"),
-        ("I’ve never broken a bone", "I have eaten bugs before", "I don’t like chocolate"),
-        ("I can do a perfect handstand", "I accidentally slept through an entire day once", "I’m afraid of heights"),
-        ("I once pulled an all-nighter for a TV show marathon", "I’ve gone on a spontaneous road trip", "I’ve never had coffee"),
-        ("I hate horror movies", "I went on a date with someone I met online", "I’ve never had a pet"),
-        ("I have tried acting in a short film", "I once prank-called my boss", "I hate public speaking"),
-        ("I’ve been in a helicopter", "I’ve swum with dolphins", "I once got a tattoo and regretted it"),
-        ("I’m a terrible cook", "I once won a dance competition", "I’m afraid of the dark"),
-        ("I once accidentally walked into the wrong meeting", "I got caught singing in an elevator", "I have zero sense of direction")
+        ("Asmi has a embarassing BL Thai guys era", "Nidhi once requested Shrishti to watch a two hour long BTS live-stream", "Nidhi has been skydiving twice"),
+        ("Nidhi been to a foreign country.", "Nidhi learnt French in highschool", "Nidhi can't swim"),
+        ("Nidhi is known as Dora the Explorer.", "Shrishti's video lags the most during BGANG meets.", "Asmi hates cats."),
+        ("Nidhi is a cat mom.", "Nidhi is in a rotary club in college.", "Nidhi is the best scribble.io player"),
+        ("BGANG did a topology project in highschool.", "We loved Shristi's mom's pesto pasta.", "Asmi's favourite is green peas."),
+        ("Nidhi never had a pet.", "Nidhi has crushes on the most retarded guys.", "Nidhi loves watching movies in her free time."),
+        ("BGANG saw a Barbie movie trailer together.", "Asmi and Shrishti mutually love music from the artist, Taylor Swift.", "BGANG forgot a member's b'day."),
+        ("Shristi once played the role of a flower in DPGA", "Nidhi and Shrishti surprised Asmi by attending her 13th b'day.", "Nidhi once got a tattoo and regretted it"),
+        ("Bidhi's bestest buthest fronds are brishti and basmi.", "Nidhi once as a prank called Asmi, Basmi and it sadly caught on.", "Nidhi watches BB ki vines."),
     ]
     
     # Unpack two truths and one lie

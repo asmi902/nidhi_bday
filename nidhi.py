@@ -264,7 +264,7 @@ elif game_choice == "Two Truths and a Lie":
         ("I have tried acting in a short film", "I once prank-called my boss", "I hate public speaking"),
         ("I’ve been in a helicopter", "I’ve swum with dolphins", "I once got a tattoo and regretted it"),
         ("I’m a terrible cook", "I once won a dance competition", "I’m afraid of the dark"),
-        ("I once accidentally walked into the wrong meeting", "I got caught singing in an elevator", "I have zero sense of direction"),
+        ("I once accidentally walked into the wrong meeting", "I got caught singing in an elevator", "I have zero sense of direction")
     ]
     truths, lie = random.choice(statements)
     options = random.sample([truths[0], truths[1], lie], 3)
@@ -274,6 +274,7 @@ elif game_choice == "Two Truths and a Lie":
             st.success("You guessed it! 😎")
         else:
             st.error(f"The lie was: {lie}")
+
             
 # Footer
 st.markdown('<p class="footer">✨ Made with love by Asmi ✨</p>', unsafe_allow_html=True)

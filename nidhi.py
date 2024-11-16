@@ -3,67 +3,83 @@ import random
 
 st.markdown("""
     <style>
+    /* Set a gradient pink background */
     body {
-        background-color: #fbeff8;
+        background: linear-gradient(to bottom, #ffe4f3, #f8bbd0);
         font-family: 'Verdana', sans-serif;
         color: #6a1b9a;
+        margin: 0;
+        padding: 0;
     }
+    
+    /* Title styling */
     .title-font {
-        font-size: 36px;
+        font-size: 42px;
         font-weight: bold;
-        color: #d500f9;
+        color: #ff4081;
         text-align: center;
         margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
+
+    /* Section title */
     .section-title {
-        font-size: 24px;
+        font-size: 28px;
         font-weight: bold;
-        color: #8e24aa;
-        margin-top: 40px;
+        color: #d81b60;
+        margin-top: 50px;
         margin-bottom: 20px;
         text-align: center;
     }
+
+    /* Card styling */
     .affirmation, .mood-booster, .compliment {
-        background-color: #ffc1e3;
-        padding: 15px;
-        border-radius: 15px;
-        font-size: 20px;
+        background: rgba(255, 193, 227, 0.9);
+        padding: 20px;
+        border-radius: 20px;
+        font-size: 22px;
         text-align: center;
         color: #4a148c;
         margin: 20px auto;
         width: 70%;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .affirmation:hover, .mood-booster:hover, .compliment:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Button styling */
     .button-container {
         text-align: center;
         margin-top: 20px;
     }
-    .game-title {
-        font-size: 22px;
-        font-weight: bold;
-        color: #ff4081;
-        text-align: center;
-    }
     .btn-hover {
-        background-color: #ce93d8;
+        background-color: #e1bee7;
         border: none;
-        padding: 10px 20px;
+        padding: 12px 25px;
         border-radius: 25px;
         color: #ffffff;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 18px;
         margin: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .btn-hover:hover {
         background-color: #ab47bc;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     }
+
+    /* Footer */
     .footer {
         text-align: center;
         font-size: 14px;
         margin-top: 50px;
-        color: #4a148c;
+        color: #6a1b9a;
     }
+
     </style>
     """, unsafe_allow_html=True)
 

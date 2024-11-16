@@ -1,8 +1,6 @@
 import streamlit as st
 import random
 
-# Aesthetic Setup
-st.set_page_config(page_title="Nidhi's Affirmation Bot 🌸", page_icon="🎀", layout="wide")
 st.markdown("""
     <style>
     body {
@@ -23,17 +21,22 @@ st.markdown("""
         color: #8e24aa;
         margin-top: 40px;
         margin-bottom: 20px;
+        text-align: center;
     }
-    .affirmation {
+    .affirmation, .mood-booster, .compliment {
         background-color: #ffc1e3;
         padding: 15px;
-        border-radius: 20px;
+        border-radius: 15px;
         font-size: 20px;
         text-align: center;
         color: #4a148c;
         margin: 20px auto;
-        width: 60%;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        width: 70%;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
     }
     .game-title {
         font-size: 22px;
@@ -49,7 +52,7 @@ st.markdown("""
         color: #ffffff;
         cursor: pointer;
         font-size: 16px;
-        margin: 10px;
+        margin: 5px;
     }
     .btn-hover:hover {
         background-color: #ab47bc;
@@ -90,6 +93,16 @@ affirmations = [
 ]
 st.markdown('<div class="affirmation">' + random.choice(affirmations) + '</div>', unsafe_allow_html=True)
 
+st.markdown('<h2 class="section-title">🌈 Mood Boosters</h2>', unsafe_allow_html=True)
+mood_boosters = [
+    "“Keep going, because you did not come this far just to come this far.” 💖",
+    "“You’re amazing just the way you are.” 💫",
+    "“The best time for new beginnings is now.” 🌱",
+    "“Believe in yourself a little more.” 🌟",
+    "“You’re doing better than you think.” 🌼"
+]
+st.markdown(f'<div class="mood-booster">{random.choice(mood_boosters)}</div>', unsafe_allow_html=True)
+
 # Random Compliments Section
 st.header("💖 Compliments Galore!")
 if st.button("Generate 20 Compliments"):
@@ -119,10 +132,10 @@ if st.button("Generate 20 Compliments"):
         st.write(f"💬 {compliment}")
 
 # Mini-Games Section
-st.header("🎮 Fun Games to Play!")
+st.markdown('<h2 class="section-title">🎮 Fun Games to Play!</h2>', unsafe_allow_html=True)
 game_choice = st.selectbox(
     "Choose a game to play:", 
-    ["Never Have I Ever", "Truth or Situations", "How Well Do You Know Me?"]
+    ["Never Have I Ever", "Truth or Situations", "How Well Do You Know Me?", "Two Truths and a Lie"]
 )
 
 # Game Logic
@@ -239,5 +252,28 @@ elif game_choice == "How Well Do You Know Me?":
         else:
             st.error(f"Oops! The correct answer was: {correct_answer}")
 
+elif game_choice == "Two Truths and a Lie":
+    st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
+    statements = [
+        ("I once met a celebrity at a party", "I have a secret tattoo", "I’ve been skydiving twice"),
+        ("I got lost in a foreign country", "I can’t swim", "I am fluent in four languages"),
+        ("I’ve never broken a bone", "I have eaten bugs before", "I don’t like chocolate"),
+        ("I can do a perfect handstand", "I accidentally slept through an entire day once", "I’m afraid of heights"),
+        ("I once pulled an all-nighter for a TV show marathon", "I’ve gone on a spontaneous road trip", "I’ve never had coffee"),
+        ("I hate horror movies", "I went on a date with someone I met online", "I’ve never had a pet"),
+        ("I have tried acting in a short film", "I once prank-called my boss", "I hate public speaking"),
+        ("I’ve been in a helicopter", "I’ve swum with dolphins", "I once got a tattoo and regretted it"),
+        ("I’m a terrible cook", "I once won a dance competition", "I’m afraid of the dark"),
+        ("I once accidentally walked into the wrong meeting", "I got caught singing in an elevator", "I have zero sense of direction"),
+    ]
+    truths, lie = random.choice(statements)
+    options = random.sample([truths[0], truths[1], lie], 3)
+    user_guess = st.radio("Guess the lie:", options)
+    if st.button("Reveal the Lie"):
+        if user_guess == lie:
+            st.success("You guessed it! 😎")
+        else:
+            st.error(f"The lie was: {lie}")
+            
 # Footer
 st.markdown('<p class="footer">✨ Made with love by Asmi ✨</p>', unsafe_allow_html=True)

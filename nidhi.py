@@ -84,7 +84,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Affirmations Section
-st.markdown('<p class="big-font">Hello Nidhi! 🌟</p>', unsafe_allow_html=True)
+st.markdown('<h2 class="section-title"> 🎀 Affirmations </h2>', unsafe_allow_html=True)
 affirmations = [
     "You are capable of amazing things, Nidhi! 💪💖",
     "Believe in yourself, you’re unstoppable! ✨🌸",

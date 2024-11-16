@@ -2,23 +2,65 @@ import streamlit as st
 import random
 
 # Aesthetic Setup
-st.set_page_config(page_title="Nidhi's Affirmation Bot 🌸", page_icon="🎀")
-st.title("🌸 Nidhi's Affirmation Chatbot 🎀")
+st.set_page_config(page_title="Nidhi's Affirmation Bot 🌸", page_icon="🎀", layout="wide")
 st.markdown("""
     <style>
-    .big-font { font-size: 28px !important; color: #FF69B4; }
-    .small-font { font-size: 16px; color: #A020F0; }
-    .affirmation { 
-        background-color: #FFB6C1; 
-        padding: 15px; 
-        border-radius: 15px; 
-        color: white; 
-        font-size: 20px; 
-        font-family: 'Arial', sans-serif; 
-        text-align: center; 
+    body {
+        background-color: #fbeff8;
+        font-family: 'Verdana', sans-serif;
+        color: #6a1b9a;
     }
-    .game-title { font-size: 22px; color: #FFD700; font-weight: bold; }
-    .footer { text-align: center; font-size: 14px; margin-top: 50px; color: #B22222; }
+    .title-font {
+        font-size: 36px;
+        font-weight: bold;
+        color: #d500f9;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #8e24aa;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .affirmation {
+        background-color: #ffc1e3;
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 20px;
+        text-align: center;
+        color: #4a148c;
+        margin: 20px auto;
+        width: 60%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .game-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #ff4081;
+        text-align: center;
+    }
+    .btn-hover {
+        background-color: #ce93d8;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px;
+    }
+    .btn-hover:hover {
+        background-color: #ab47bc;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .footer {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 50px;
+        color: #4a148c;
+    }
     </style>
     """, unsafe_allow_html=True)
 

@@ -271,8 +271,7 @@ elif game_choice == "How Well Do You Know Me?":
 elif game_choice == "Two Truths and a Lie":
     st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
     # Define the game statements with relevant emojis
-    elif game_choice == "Two Truths and a Lie":
-    st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
+    
     statements = [
             ("Asmi has an embarrassing BL Thai guys era 🎭", 
          "Nidhi once requested Shrishti to watch a two-hour-long BTS live-stream 🎤", 

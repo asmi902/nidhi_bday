@@ -271,8 +271,10 @@ elif game_choice == "How Well Do You Know Me?":
 elif game_choice == "Two Truths and a Lie":
     st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
     # Define the game statements with relevant emojis
+    elif game_choice == "Two Truths and a Lie":
+    st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
     statements = [
-        ("Asmi has an embarrassing BL Thai guys era 🎭", 
+            ("Asmi has an embarrassing BL Thai guys era 🎭", 
          "Nidhi once requested Shrishti to watch a two-hour-long BTS live-stream 🎤", 
          "Nidhi has been skydiving twice 🪂"),
         ("Nidhi has been to a foreign country ✈️", 
@@ -301,35 +303,16 @@ elif game_choice == "Two Truths and a Lie":
          "Nidhi watches BB Ki Vines 📺"),
     ]
     
-    # Function to display a question
-    def display_question():
-        # Select a random set of truths and a lie
-        truths_and_lie = random.choice(statements)
-        return truths_and_lie
-    
-    # Track if the lie is revealed
-    if "revealed" not in st.session_state:
-        st.session_state.revealed = False
-    
-    if "current_question" not in st.session_state:
-        st.session_state.current_question = display_question()
-    
-    # Current question
-    truth1, truth2, lie = st.session_state.current_question
+    # Unpack two truths and one lie
+    truth1, truth2, lie = random.choice(statements)
     options = random.sample([truth1, truth2, lie], 3)
     
-    # Game UI
-    st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
     user_guess = st.radio("Guess the lie:", options)
-    
-    # Reveal the lie
     if st.button("Reveal the Lie"):
         if user_guess == lie:
             st.success("You guessed it! 😎")
         else:
-            st.error(f"The lie was: {lie}")
-    
-        st. button state
+            st.error(f"The lie was: {lie}") 
 
             
 # Footer

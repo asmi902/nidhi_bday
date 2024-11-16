@@ -266,14 +266,18 @@ elif game_choice == "Two Truths and a Lie":
         ("I’m a terrible cook", "I once won a dance competition", "I’m afraid of the dark"),
         ("I once accidentally walked into the wrong meeting", "I got caught singing in an elevator", "I have zero sense of direction")
     ]
-    truths, lie = random.choice(statements)
-    options = random.sample([truths[0], truths[1], lie], 3)
+    
+    # Unpack two truths and one lie
+    truth1, truth2, lie = random.choice(statements)
+    options = random.sample([truth1, truth2, lie], 3)
+    
     user_guess = st.radio("Guess the lie:", options)
     if st.button("Reveal the Lie"):
         if user_guess == lie:
             st.success("You guessed it! 😎")
         else:
             st.error(f"The lie was: {lie}")
+
 
             
 # Footer

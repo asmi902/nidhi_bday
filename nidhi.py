@@ -270,39 +270,66 @@ elif game_choice == "How Well Do You Know Me?":
 
 elif game_choice == "Two Truths and a Lie":
     st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
+    # Define the game statements with relevant emojis
     statements = [
-    ("Asmi has an embarrassing BL Thai guys era", "Nidhi once requested Shrishti to watch a two-hour-long BTS live-stream", "Nidhi has been skydiving twice"),
-    ("Nidhi has been to a foreign country.", "Nidhi learned French in high school", "Nidhi can't swim"),
-    ("Nidhi is known as Dora the Explorer.", "Shrishti's video lags the most during BGANG meets.", "Asmi hates cats."),
-    ("Nidhi is a cat mom.", "Nidhi is in a rotary club in college.", "Nidhi is the best scribble.io player"),
-    ("BGANG did a topology project in high school.", "We loved Shrishti's mom's pesto pasta.", "Asmi's favorite is green peas."),
-    ("Nidhi never had a pet.", "Nidhi has crushes on the most retarded guys.", "Nidhi loves watching movies in her free time."),
-    ("BGANG saw a Barbie movie trailer together.", "Asmi and Shrishti mutually love music from the artist Taylor Swift.", "BGANG forgot a member's b'day."),
-    ("Shrishti once played the role of a flower in DPGA", "Nidhi and Shrishti surprised Asmi by attending her 13th b'day.", "Nidhi once got a tattoo and regretted it"),
-    ("Bidhi's bestest buthest fronds are Brishti and Basmi.", "Nidhi once as a prank called Asmi 'Basmi,' and it sadly caught on.", "Nidhi watches BB Ki Vines."),
-]
-
-# Use session state to preserve the current question
-if "current_question" not in st.session_state:
-    st.session_state.current_question = random.choice(statements)
-
-# Unpack truths and lie
-truth1, truth2, lie = st.session_state.current_question
-options = random.sample([truth1, truth2, lie], 3)
-
-# Game UI
-st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
-user_guess = st.radio("Guess the lie:", options)
-
-# Handle button press
-if st.button("Reveal the Lie"):
-    if user_guess == lie:
-        st.success("You guessed it! 😎")
-    else:
-        st.error(f"The lie was: {lie}")
+        ("Asmi has an embarrassing BL Thai guys era 🎭", 
+         "Nidhi once requested Shrishti to watch a two-hour-long BTS live-stream 🎤", 
+         "Nidhi has been skydiving twice 🪂"),
+        ("Nidhi has been to a foreign country ✈️", 
+         "Nidhi learned French in high school 🇫🇷", 
+         "Nidhi can't swim 🏊‍♀️"),
+        ("Nidhi is known as Dora the Explorer 🧭", 
+         "Shrishti's video lags the most during BGANG meets 🖥️", 
+         "Asmi hates cats 🐱"),
+        ("Nidhi is a cat mom 🐾", 
+         "Nidhi is in a rotary club in college 🎓", 
+         "Nidhi is the best Scribble.io player 🎮"),
+        ("BGANG did a topology project in high school 📚", 
+         "We loved Shristi's mom's pesto pasta 🍝", 
+         "Asmi's favorite is green peas 🟢"),
+        ("Nidhi never had a pet 🐕", 
+         "Nidhi has crushes on the most retarded guys 🤪", 
+         "Nidhi loves watching movies in her free time 🎬"),
+        ("BGANG saw a Barbie movie trailer together 🎥", 
+         "Asmi and Shrishti mutually love music from the artist, Taylor Swift 🎶", 
+         "BGANG forgot a member's b'day 🎂"),
+        ("Shrishti once played the role of a flower in DPGA 🌸", 
+         "Nidhi and Shrishti surprised Asmi by attending her 13th b'day 🎉", 
+         "Nidhi once got a tattoo and regretted it 🖋️"),
+        ("Bidhi's bestest buthest fronds are Brishti and Basmi 👯‍♀️", 
+         "Nidhi once as a prank called Asmi 'Basmi,' and it sadly caught on 🤭", 
+         "Nidhi watches BB Ki Vines 📺"),
+    ]
     
-    # Load a new question for the next round
-    st.session_state.current_question = random.choice(statements)
+    # Function to display a question
+    def display_question():
+        # Select a random set of truths and a lie
+        truths_and_lie = random.choice(statements)
+        return truths_and_lie
+    
+    # Track if the lie is revealed
+    if "revealed" not in st.session_state:
+        st.session_state.revealed = False
+    
+    if "current_question" not in st.session_state:
+        st.session_state.current_question = display_question()
+    
+    # Current question
+    truth1, truth2, lie = st.session_state.current_question
+    options = random.sample([truth1, truth2, lie], 3)
+    
+    # Game UI
+    st.markdown('<p class="game-title">Two Truths and a Lie 🤥</p>', unsafe_allow_html=True)
+    user_guess = st.radio("Guess the lie:", options)
+    
+    # Reveal the lie
+    if st.button("Reveal the Lie"):
+        if user_guess == lie:
+            st.success("You guessed it! 😎")
+        else:
+            st.error(f"The lie was: {lie}")
+    
+        st. button state
 
             
 # Footer
